@@ -1,0 +1,179 @@
+// _variables.scss (or at the top of your SCSS file)
+$primary-color: #1E1E1E;
+$secondary-color: #6B6B6B;
+$accent-color: #A78BFA;
+$text-color: #FFFFFF;
+$link-hover-color: #8B5CF6;
+$line-color: #E5E5E5;
+$card-color: #F7F7F8;
+
+
+/* ===== Dashboard Layout ===== */
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+  background: $card-color;
+  font-family: "Inter", sans-serif;
+  color: $primary-color;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 260px;
+  background: $text-color;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  position: fixed;
+  height: 100vh;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.04);
+  border-radius: 18px;
+}
+
+h2 a {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: $primary-color;
+  text-decoration: none;
+
+  a:hover {
+    color: $secondary-color;
+    transition: all 0.3s ease;
+  }
+}
+
+
+.side-btn a,
+.side-btn button {
+  color: $primary-color;
+  font-weight: 300;
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  transition: background 0.2s ease;
+  gap: 1rem;
+
+}
+
+.side-btn a:hover,
+.side-btn button:hover {
+  background-color: $line-color;
+}
+
+.side-btn a:visited,
+.side-btn button:visited {
+  background-color: $line-color;
+}
+
+.side-btn {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.6rem;
+  gap: 0.2rem;
+}
+
+.btn-toggle a {
+  color: $primary-color;
+  font-weight: 300;
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  transition: background 0.2s ease;
+  gap: 1rem;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar-nav a,
+.sidebar-nav button {
+  text-decoration: none;
+  color: $secondary-color;
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav button:hover {
+  background: $line-color;
+}
+
+/* Sign out button */
+.sidebar-nav .signout {
+  color: #b91c1c;
+  font-weight: 400;
+}
+
+/* ===== Main Content ===== */
+.main-content {
+  margin-left: 240px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+/* ===== Topbar ===== */
+.topbar {
+  background: none;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid $line-color;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.page-view a {
+  background: $accent-color;
+  color: $text-color;
+  text-decoration: none;
+  padding: 0.5rem 2rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.page-view a:hover {
+  background: $link-hover-color;
+}
+
+/* ===== Content ===== */
+.content {
+  padding: 2rem;
+}
+
+.content h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: $primary-color;
+}
+
+.content p {
+  margin-bottom: 1rem;
+  color: $secondary-color;
+}
+
+.landing-page-editor {
+  background: #f9f9f9;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.landing-page-editor .landing-page {
+  padding: 2rem 1rem;
+  min-height: auto;
+  justify-content: flex-start;
+}
+
+body.dashboard {
+  overflow-x: hidden;
+  background: #fafafa;
+}
