@@ -1,0 +1,162 @@
+// _variables.scss (or at the top of your SCSS file)
+$primary-color: #1E1E1E;
+$secondary-color: #6B6B6B;
+$accent-color: #A78BFA;
+$text-color: #FFFFFF;
+$link-hover-color: #8B5CF6;
+$card-color: #F7F7F8;
+$line-color: #E5E5E5;
+
+
+/* --- Overall Page Layout --- */
+.landing-page {
+  text-align: center;
+  padding: 3rem 1.5rem;
+
+  /* Card styling */
+  background-color: #f9f9f9; /* light card background */
+  border-radius: 1rem;       /* rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* subtle shadow */
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* Optional: make it a little narrower like a card in the center */
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+
+/* --- About Section --- */
+.about {
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+}
+
+.avatar-preview {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: none;
+}
+
+
+/* --- About Section (Refined Username Styling) --- */
+.user-info {
+  font-family: inherit; /* Uses your theme font */
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+  color: inherit;
+  border-radius: 14px;
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+
+.about p {
+  font-size: 1rem;
+  opacity: 0.8;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* --- Links Section --- */
+.link-box {
+  list-style: none;
+  padding: 0;
+  margin: 2rem auto 0;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  h3 {
+    color: $primary-color;
+  }
+
+  p {
+    color: $secondary-color;
+  }
+}
+
+/* Each link container */
+.link-box li {
+  width: 100%;
+}
+
+/* --- Elevated Link Boxes --- */
+.link-box a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 14px;
+  padding: 1.1rem 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05),
+              0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+/* --- Hover State --- */
+.link-box a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* --- Optional Active State (click effect) --- */
+.link-box a:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.link-box li a {
+  position: relative;             /* allows absolute positioning inside */
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05),
+              0 8px 20px rgba(0, 0, 0, 0.08);
+  font-weight: 500;
+  text-align: center;             /* centers the text */
+}
+
+.link-box li a .link-text {
+  display: inline-block;
+}
+
+.link-box li a i {
+  position: absolute;
+  right: 1rem;                    /* move to the right edge */
+  top: 50%;
+  transform: translateY(-50%);    /* vertically center the icon */
+  font-size: 1.1rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 480px) {
+  .user-info {
+    font-size: 1.8rem;
+  }
+
+  .link-box {
+    max-width: 90%;
+  }
+}
