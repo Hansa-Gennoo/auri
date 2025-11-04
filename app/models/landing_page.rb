@@ -1,3 +1,18 @@
 class LandingPage < ApplicationRecord
   belongs_to :user
+  belongs_to :theme, optional: true
+  has_many :links, dependent: :destroy
+  accepts_nested_attributes_for :links
+
+  after_initialize :set_default_theme, if: :new_record?
+
+  def theme_name
+    theme.name
+  end
+
+  private
+
+  def set_default_theme
+    self.theme ||= Theme.first # Pick first preset theme as default
+  end
 end
