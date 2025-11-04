@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_11_04_112116) do
+ActiveRecord::Schema[7.1].define(version: 2025_11_04_112709) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,6 +31,20 @@ ActiveRecord::Schema[7.1].define(version: 2025_11_04_112116) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["landing_page_id"], name: "index_links_on_landing_page_id"
+  end
+
+  create_table "themes", force: :cascade do |t|
+    t.string "name"
+    t.string "key"
+    t.string "primary_colour"
+    t.string "accent_colour"
+    t.string "background_colour"
+    t.string "font_heading"
+    t.string "font_body"
+    t.boolean "base"
+    t.boolean "customisable"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
