@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_11_04_111621) do
+ActiveRecord::Schema[7.1].define(version: 2025_11_04_112116) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,15 @@ ActiveRecord::Schema[7.1].define(version: 2025_11_04_111621) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_landing_pages_on_user_id"
+  end
+
+  create_table "links", force: :cascade do |t|
+    t.string "title"
+    t.string "url"
+    t.bigint "landing_page_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["landing_page_id"], name: "index_links_on_landing_page_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,4 +46,5 @@ ActiveRecord::Schema[7.1].define(version: 2025_11_04_111621) do
   end
 
   add_foreign_key "landing_pages", "users"
+  add_foreign_key "links", "landing_pages"
 end
