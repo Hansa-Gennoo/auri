@@ -1,0 +1,30 @@
+<%= form_with model: @landing_page,
+              url: dashboard_landing_page_path(@landing_page),
+              method: :patch,
+              data: { controller: "feature-form" },
+              multipart: true do |f| %>
+
+  <!-- Avatar Section -->
+  <div class="avatar field" data-feature-form-target="avatar">
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar, accept: "image/*", class: 'avatar-input' %>
+    <%= f.submit "Save Image", data: { action: "click->feature-form#submitAvatar" } %>
+  </div>
+
+  <!-- Bio Section -->
+  <div class="bio" data-feature-form-target="bio">
+    <%= f.label :bio %>
+    <%= f.text_area :bio %>
+    <%= f.submit "Save Bio", data: { action: "click->feature-form#submitBio" } %>
+  </div>
+
+  <!-- Theme Section -->
+  <div class="theme" data-feature-form-target="theme" class="hidden">
+    <%= f.label :theme_id, "Select Theme" %>
+    <%= f.collection_select :theme_id, Theme.all, :id, :name %>
+    <%= f.submit "Save Theme", data: { action: "click->feature-form#submitTheme" } %>
+  </div>
+
+
+
+<% end %>

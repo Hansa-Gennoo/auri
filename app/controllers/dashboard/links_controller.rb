@@ -38,7 +38,7 @@ class Dashboard::LinksController < Dashboard::BaseController
   end
 
   def destroy
-    @landing_page = current_user.landing_page(params[:landing_page_id])
+    @landing_page = current_user.landing_page
     @link = @landing_page.links.find(params[:id])
     @link.destroy
     redirect_to dashboard_landing_page_links_path(@landing_page), notice: "Link deleted."

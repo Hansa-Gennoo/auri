@@ -20,5 +20,5 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   # Public landing pages (username-based)
-  #get '/:username', to: 'landing_pages#show', as: :public_landing_page
+  get '/:username', to: 'landing_pages#show', as: :public_landing_page
 end

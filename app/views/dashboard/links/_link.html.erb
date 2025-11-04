@@ -1,0 +1,12 @@
+<!-- app/views/dashboard/links/_link.html.erb -->
+
+<%= simple_form_for [:dashboard, @landing_page, @link] do |f| %>
+  <div class="form-inputs">
+    <%= f.input :title, label: "Title" %>
+    <%= f.input :url, label: "URL" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, @link.new_record? ? "Create Link" : "Update Link" %>
+  </div>
+<% end %>
