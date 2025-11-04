@@ -14,14 +14,14 @@ class User < ApplicationRecord
     create_landing_page(title: "My First Landing Page", theme: Theme.first)
   end
 
- # extend FriendlyId
-  #friendly_id :username, use: :slugged
+ extend FriendlyId
+  friendly_id :username, use: :slugged
 
 
 
-  #def should_generate_new_friendly_id?
-    #slug.blank? || will_save_change_to_username?
-  #end
+  def should_generate_new_friendly_id?
+    slug.blank? || will_save_change_to_username?
+  end
 
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true
