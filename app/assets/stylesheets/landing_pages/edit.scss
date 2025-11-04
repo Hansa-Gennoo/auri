@@ -1,0 +1,81 @@
+$primary-color: #1E1E1E;
+$secondary-color: #6B6B6B;
+$accent-color: #A78BFA;
+$text-color: #FFFFFF;
+$link-hover-color: #8B5CF6;
+$line-color: #E5E5E5;
+$card-color: #F7F7F8;
+
+/* ========== Feature Form Layout ========== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+/* Each Section (avatar, bio, theme) */
+.avatar,
+.bio,
+.theme {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.avatar-input {
+  width: 400px;
+}
+
+/* Labels */
+form label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Inputs */
+form input[type="file"],
+form textarea,
+form select {
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease-in-out;
+}
+
+/* Focus States */
+form input:focus,
+form textarea:focus,
+form select:focus {
+  border-color: $link-hover-color; /* Your brand accent (purple-like) */
+  outline: none;
+}
+
+/* Submit Buttons */
+form input[type="submit"] {
+  align-self: flex-start;
+  background-color: $line-color;
+  color: $secondary-color;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+form input[type="submit"]:hover {
+  background-color: $accent-color;
+  color: $text-color;
+}
+
+/* Optional: hidden class for toggling with JS */
+.hidden {
+  display: none;
+}
