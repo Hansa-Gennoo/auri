@@ -1,0 +1,34 @@
+<h1 class="themes-title">Themes</h1>
+
+<div class="themes-container">
+  <% @themes.each do |theme| %>
+    <div class="theme-item">
+      <div class="theme-content">
+        <%= link_to "#", target: "_blank", class: "theme-display" do %>
+          <span class="theme-title"><%= theme.name %></span>
+
+        <% end %>
+      </div>
+
+      <div class="theme-actions">
+        <%= link_to edit_theme_path(theme),
+                    class: "edit-theme", title: "Edit" do %>
+          <i class="fa-regular fa-pen-to-square"></i>
+        <% end %>
+
+        <%= link_to themes_path(theme),
+                    data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this theme?" },
+                    class: "delete-theme",
+                    title: "Delete" do %>
+          <i class="fa-regular fa-trash-can"></i>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="add-theme-container">
+  <%= link_to "Add A Theme",
+      new_theme_path(@theme),
+      class: "btn-add-theme" %>
+</div>
