@@ -1,1 +1,72 @@
 // Specific CSS for your home-page
+// _variables.scss (or at the top of your SCSS file)
+$primary-color: #1E1E1E;
+$secondary-color: #6B6B6B;
+$accent-color: #A78BFA;
+$text-color: #F7F7F8;
+$link-hover-color: #8B5CF6;
+
+
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background: linear-gradient(317deg, #F7F7F8, #FFFFFF);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 8s ease infinite;
+    -moz-animation: AnimationName 8s ease infinite;
+    -o-animation: AnimationName 8s ease infinite;
+    animation: AnimationName 8s ease infinite
+}
+
+.heading h1 {
+  font-size: 120px;
+}
+
+.heading h3 {
+  font-size: 35;
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: 400;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-start; /* or space-between, depending on layout */
+  align-items: center;
+  gap: 1rem;
+}
+
+#btn-join a {
+  display: inline-block;
+  background-color: #A78BFA; /* nice purple shade */
+  color: #F7F7F8;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 14px 90px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.5px;
+}
+
+#btn-join a:hover {
+  background-color: #8B5CF6; /* slightly darker on hover */
+}
+
+.btn-log a {
+  display: inline-block;
+  background-color: #E5E5E5; /* nice purple shade */
+  color: #6B6B6B;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 14px 90px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.5px;
+}
