@@ -1,0 +1,117 @@
+/* ===== Themes Page ===== */
+
+.themes-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.themes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.theme-item {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.theme-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.theme-content {
+  margin-bottom: 1rem;
+}
+
+.theme-display {
+  display: block;
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: color 0.2s ease;
+}
+
+.theme-display:hover {
+  color: #6a0dad; /* subtle accent color consistent with brand */
+}
+
+.theme-title {
+  font-size: 1.1rem;
+}
+
+.theme-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.edit-theme,
+.delete-theme {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  font-size: 1.1rem;
+  padding: 0.25rem;
+  transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.edit-theme:hover {
+  color: #6a0dad;
+  transform: scale(1.1);
+}
+
+.delete-theme:hover {
+  color: #e63946; /* red for delete */
+  transform: scale(1.1);
+}
+
+.add-theme-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-add-theme {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #6a0dad; /* brand accent */
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-add-theme:hover {
+  background-color: #5a08b5;
+  transform: translateY(-2px);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .themes-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .theme-actions {
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+}

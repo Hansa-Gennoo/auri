@@ -1,7 +1,10 @@
 class ThemesController < ApplicationController
-def index
-    @themes = Theme.all
-end
+  before_action :authenticate_admin!, except: [:index, :show]
+
+
+  def index
+      @themes = Theme.all
+  end
 
   def show
     @theme = Theme.find(params[:id])
@@ -43,5 +46,9 @@ end
   def theme_params
     require.params(:theme).permit(:name, :key, :base, :primary_colour, :accent_colour, :background_colour, :font_heading, :font_body, :customisable)
 
+  end
+
+  def authenticate_admin!
+    redirect_to root_path, alert: "Access denied." unless current_user.admin?
   end
 end
