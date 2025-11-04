@@ -1,0 +1,16 @@
+<div class="theme-form">
+  <%= simple_form_for @theme do |f| %>
+    <%= f.input :name %>
+    <%= f.input :key %>
+    <%= f.input :base %>
+    <%= f.input :primary_colour %>
+    <%= f.input :accent_colour %>
+    <%= f.input :background_colour %>
+    <%= f.input :font_heading %>
+    <%= f.input :font_body %>
+    <%= f.input :customisable %>
+    <div class="save-btn">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>

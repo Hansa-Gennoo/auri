@@ -1,5 +1,6 @@
 class LandingPage < ApplicationRecord
   belongs_to :user
+  has_one_attached :avatar 
   belongs_to :theme, optional: true
   has_many :links, dependent: :destroy
   accepts_nested_attributes_for :links

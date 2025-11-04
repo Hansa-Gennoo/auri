@@ -19,9 +19,9 @@ class Dashboard::LandingPagesController < Dashboard::BaseController
     @landing_page = current_user.landing_page
 
     # Attach avatar manually if present
-    #if params[:landing_page][:avatar].present?
-    #  @landing_page.avatar.attach(params[:landing_page][:avatar])
-    #end
+    if params[:landing_page][:avatar].present?
+      @landing_page.avatar.attach(params[:landing_page][:avatar])
+    end
 
     if @landing_page.update(landing_page_params.except(:avatar))
       redirect_to dashboard_landing_page_path(@landing_page), notice: "Landing page updated."
