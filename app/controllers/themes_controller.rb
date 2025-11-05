@@ -1,5 +1,5 @@
 class ThemesController < ApplicationController
-  before_action :authenticate_admin!, except: [:index, :show]
+  before_action :authenticate_admin!
 
 
   def index
@@ -15,7 +15,7 @@ class ThemesController < ApplicationController
   end
 
   def create
-    @theme = Theme.new
+    @theme = Theme.new(theme_params)
     if @theme.save
       redirect_to themes_path
     else
@@ -44,7 +44,7 @@ class ThemesController < ApplicationController
   private
 
   def theme_params
-    require.params(:theme).permit(:name, :key, :base, :primary_colour, :accent_colour, :background_colour, :font_heading, :font_body, :customisable)
+    params.require(:theme).permit(:name, :key, :base, :primary_colour, :accent_colour, :background_colour, :font_heading, :font_body, :customisable)
 
   end
 

@@ -7,9 +7,14 @@
               html: { multipart: true, data: { controller: "editor", editor_target: "form" } } do |f| %>
 
 <div class="landing-page"
-     style="background-color: <%= theme.background_colour %>;
-            color: <%= theme.primary_colour %>;
-            font-family: <%= theme.font_body %>;">
+     style="
+       --background-colour: <%= theme.background_colour %>;
+       --primary-colour: <%= theme.primary_colour %>;
+       --accent-colour: <%= theme.accent_colour %>;
+       --font-heading: '<%= theme.font_heading %>';
+       --font-body: '<%= theme.font_body %>';
+     ">
+
 
   <div class="about">
     <!-- Avatar -->
@@ -49,7 +54,7 @@
           <li>
             <!-- Normal view -->
             <div data-editor-target="displayField">
-              <%= link_to link.url, target: "_blank" do %>
+              <%= link_to link.url, target: "_blank", class: "btn-text" do %>
                 <span><%= link.title %></span>
 
               <% end %>

@@ -30,7 +30,7 @@
             <%= link_to "Manage Links", dashboard_landing_page_links_path(@landing_page), class: "btn-secondary" %>
 
             <% if @landing_page.user.admin? %>
-              <%= link_to "Manage Themes", dashboard_landing_page_themes_path(@landing_page), class: "btn-secondary" %>
+              <%= link_to "Manage Themes", themes_path, class: "btn-secondary" %>
             <% end %>
 
 

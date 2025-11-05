@@ -1,0 +1,84 @@
+/* themes.scss */
+.landing-page {
+  background-color: var(--background-colour);
+  color: var(--primary-colour);
+  font-family: var(--font-body);
+  transition: all 0.3s ease;
+}
+
+.landing-page h1,
+.landing-page h2,
+.landing-page h3,
+.landing-page h4 {
+  font-family: var(--font-heading);
+  color: var(--accent-colour);
+}
+
+.landing-page a {
+  color: var(--accent-colour);
+}
+
+.landing-page .btn {
+  background-color: var(--accent-colour);
+  color: var(--background-colour);
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  font-family: var(--font-heading);
+  transition: background-color 0.3s ease;
+}
+
+.landing-page .btn:hover {
+  background-color: var(--primary-colour);
+  color: var(--background-colour);
+}
+
+/* themes.scss */
+
+.landing-page .btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+/* --- Primary Button --- */
+.landing-page .btn-primary {
+  background-color: var(--accent-colour);
+  color: var(--background-colour);
+}
+
+.landing-page .btn-primary:hover {
+  background-color: var(--primary-colour);
+  color: var(--background-colour);
+}
+
+/* --- Secondary Button --- */
+.landing-page .btn-secondary {
+  background-color: transparent;
+  color: var(--accent-colour);
+  border: 1.5px solid var(--accent-colour);
+}
+
+.landing-page .btn-secondary:hover {
+  background-color: var(--accent-colour);
+  color: var(--background-colour);
+}
+
+/* --- Text Button (Minimal) --- */
+.landing-page .btn-text {
+  background: none;
+  border: none;
+  color: var(--accent-colour);
+  font-family: var(--font-body);
+}
+
+.landing-page .btn-text:hover {
+  text-decoration: underline;
+}
