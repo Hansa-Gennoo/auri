@@ -1,87 +1,90 @@
-
 <% theme = @landing_page.theme %>
+
+
+<style>
+  :root {
+    --background-colour: <%= theme.background_colour %>;
+    --primary-colour: <%= theme.primary_colour %>;
+    --accent-colour: <%= theme.accent_colour %>;
+    --font-heading: "<%= theme.font_heading %>", sans-serif;
+    --font-body: "<%= theme.font_body %>", sans-serif;
+  }
+</style>
 
 <%= form_with model: @landing_page,
               url: dashboard_landing_page_path(@landing_page),
               local: true,
               html: { multipart: true, data: { controller: "editor", editor_target: "form" } } do |f| %>
 
-<div class="landing-page"
-     style="
-       --background-colour: <%= theme.background_colour %>;
-       --primary-colour: <%= theme.primary_colour %>;
-       --accent-colour: <%= theme.accent_colour %>;
-       --font-heading: '<%= theme.font_heading %>';
-       --font-body: '<%= theme.font_body %>';
-     ">
+  <div class="landing-page">
 
 
-  <div class="about">
-    <!-- Avatar -->
-   <% if @landing_page.avatar.attached? %>
-      <%= image_tag @landing_page.avatar, class: "avatar-preview", data: { editor_target: "displayField" } %>
-    <% else %>
-      <div data-editor-target="displayField">
-        <p>No avatar yet</p>
-      </div>
-    <% end %>
-
-    <div data-editor-target="editableField" hidden>
-      <%= f.file_field :avatar, accept: "image/*", class: "avatar-upload" %>
-    </div>
-
-      <!-- Username -->
-      <h2 class="user-info" data-editor-target="displayField"><%= current_user.username %></h2>
-      <!-- (Username is static, so not editable directly) -->
-
-      <!-- Bio -->
-      <% if @landing_page.bio.present? %>
-        <p data-editor-target="displayField"><%= @landing_page.bio %></p>
-      <% else %>
-        <p data-editor-target="displayField" class="placeholder-text">Add a short bio about yourself...</p>
-      <% end %>
-
-    <div data-editor-target="editableField" hidden>
-      <%= f.text_area :bio, rows: 3, placeholder: "Write something about yourself..." %>
-    </div>
-  </div>
-
-
-   <!-- Links Section -->
-    <ul class="link-box">
-      <% if @landing_page.links.present? %>
-        <% @landing_page.links.each do |link| %>
-          <li>
-            <!-- Normal view -->
-            <div data-editor-target="displayField">
-              <%= link_to link.url, target: "_blank", class: "btn-text" do %>
-                <span><%= link.title %></span>
-
-              <% end %>
-            </div>
-    <!-- Edit view -->
-            <div data-editor-target="editableField" hidden>
-              <%= f.fields_for :links, link do |lf| %>
-                <div class="editable-link">
-                  <%= lf.text_field :title, placeholder: "Link title" %>
-                  <%= lf.text_field :url, placeholder: "Link URL" %>
-                </div>
-              <% end %>
-            </div>
-          </li>
-        <% end %>
+    <div class="about">
+      <!-- Avatar -->
+    <% if @landing_page.avatar.attached? %>
+        <%= image_tag @landing_page.avatar, class: "avatar-preview", data: { editor_target: "displayField" } %>
       <% else %>
         <div data-editor-target="displayField">
-          <h3>Your page is currently empty.</h3>
-          <p>Click the Add Link button to start building!</p>
+          <p>No avatar yet</p>
         </div>
       <% end %>
-    </ul>
-     <!-- Save Button (visible in edit mode only) -->
-    <div data-editor-target="saveButton" hidden class="save-container">
-      <%= f.submit "Save Changes", class: "btn-save" %>
+
+      <div data-editor-target="editableField" hidden>
+        <%= f.file_field :avatar, accept: "image/*", class: "avatar-upload" %>
+      </div>
+
+        <!-- Username -->
+        <h2 class="user-info" data-editor-target="displayField"><%= current_user.username %></h2>
+        <!-- (Username is static, so not editable directly) -->
+
+        <!-- Bio -->
+        <% if @landing_page.bio.present? %>
+          <p data-editor-target="displayField"><%= @landing_page.bio %></p>
+        <% else %>
+          <p data-editor-target="displayField" class="placeholder-text">Add a short bio about yourself...</p>
+        <% end %>
+
+      <div data-editor-target="editableField" hidden>
+        <%= f.text_area :bio, rows: 3, placeholder: "Write something about yourself..." %>
+      </div>
     </div>
 
-  </div>
+
+    <!-- Links Section -->
+      <ul class="link-box">
+        <% if @landing_page.links.present? %>
+          <% @landing_page.links.each do |link| %>
+            <li>
+              <!-- Normal view -->
+              <div data-editor-target="displayField">
+                <%= link_to link.url, target: "_blank", class: "btn-text" do %>
+                  <span><%= link.title %></span>
+
+                <% end %>
+              </div>
+      <!-- Edit view -->
+              <div data-editor-target="editableField" hidden>
+                <%= f.fields_for :links, link do |lf| %>
+                  <div class="editable-link">
+                    <%= lf.text_field :title, placeholder: "Link title" %>
+                    <%= lf.text_field :url, placeholder: "Link URL" %>
+                  </div>
+                <% end %>
+              </div>
+            </li>
+          <% end %>
+        <% else %>
+          <div data-editor-target="displayField">
+            <h3>Your page is currently empty.</h3>
+            <p>Click the Add Link button to start building!</p>
+          </div>
+        <% end %>
+      </ul>
+      <!-- Save Button (visible in edit mode only) -->
+      <div data-editor-target="saveButton" hidden class="save-container">
+        <%= f.submit "Save Changes", class: "btn-save" %>
+      </div>
+
+    </div>
   <% end %>
 </div>
