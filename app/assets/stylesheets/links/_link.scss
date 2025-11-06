@@ -1,0 +1,87 @@
+:root {
+  --gold1: #FFC857;
+  --gold2: #FFE0A4;
+  --sage: #9DB8A5;
+  --coral: #FF7F50;
+  --bg: #FFF8F0;
+  --text: #333333;
+  --card: #FFFDF6;
+}
+
+/* FORM CONTAINER */
+.auri-form .form-container {
+  max-width: 450px;
+  margin: 3rem auto;
+  padding: 2rem 2.5rem;
+  background-color: var(--card);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.auri-form .form-input input[type="text"],
+.auri-form .form-input input[type="url"] {
+  background-color: var(--card);
+  border: 1.5px solid #ccc;
+
+  .form-input input:focus {
+    border-color: var(--sage);
+    outline: none;
+  }
+}
+
+/* INPUT FIELDS */
+.form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-input label {
+  font-weight: 400;
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+  color: var(--text);
+  font-family: 'Open sans', sans-serif;
+}
+
+/* SUBMIT BUTTON */
+.form-action {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.form-action input[type="submit"],
+.form-action button {
+  background: var(--gold1);
+  border: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-action input[type="submit"]:hover,
+.form-action button:hover {
+  background: var(--gold2);
+}
+
+/* OPTIONAL: SUCCESS/UPDATE STYLES */
+.form-container.success {
+  border: 2px solid var(--sage);
+}
+
+.form-container.updated {
+  border: 2px solid var(--coral);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .form-container {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+}
