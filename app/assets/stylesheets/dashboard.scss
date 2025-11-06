@@ -1,45 +1,49 @@
 // _variables.scss (or at the top of your SCSS file)
-$primary-color: #1E1E1E;
-$secondary-color: #6B6B6B;
-$accent-color: #A78BFA;
-$text-color: #FFFFFF;
-$link-hover-color: #8B5CF6;
-$line-color: #E5E5E5;
-$card-color: #F7F7F8;
+:root {
+  --gold1: #FFC857;
+  --gold2: #FFE0A4;
+  --coral: #FF7F50;
+  --sage: #9DB8A5;
+  --bg: #FFF9EC;
+  --text: #2F3132;
+  --card: #FFFDF6;
+  --text2: #6B6B6B;
+}
 
 
 /* ===== Dashboard Layout ===== */
 .dashboard-layout {
   display: flex;
   height: 100vh;
-  background: $card-color;
-  font-family: "Inter", sans-serif;
-  color: $primary-color;
+  background: var(--bg);
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  color: var(--text);
 }
 
 /* ===== Sidebar ===== */
 .sidebar {
   width: 260px;
-  background: $text-color;
-  border-right: 1px solid #e5e7eb;
+  background: var(--card);
+  border-right: 1px solid var(--sage);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 1.5rem;
   position: fixed;
   height: 100vh;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.04);
-  border-radius: 18px;
 }
 
 h2 a {
-  font-size: 1.5rem;
+  font-size: 1.9rem;
+  font-family: 'Cormorant Garamond';
+  font-weight: 300;
   margin-bottom: 1rem;
-  color: $primary-color;
+  color: var(--text);
   text-decoration: none;
 
   a:hover {
-    color: $secondary-color;
+    color: #6B6B6B;
     transition: all 0.3s ease;
   }
 }
@@ -47,7 +51,7 @@ h2 a {
 
 .side-btn a,
 .side-btn button {
-  color: $primary-color;
+  color: var(--text);
   font-weight: 300;
   border-radius: 12px;
   padding: 0.6rem 1rem;
@@ -59,12 +63,12 @@ h2 a {
 
 .side-btn a:hover,
 .side-btn button:hover {
-  background-color: $line-color;
+  background-color: var(--gold2);
 }
 
 .side-btn a:visited,
 .side-btn button:visited {
-  background-color: $line-color;
+  background-color: var(--gold2);
 }
 
 .side-btn {
@@ -75,7 +79,7 @@ h2 a {
 }
 
 .btn-toggle a {
-  color: $primary-color;
+  color: var(--text);
   font-weight: 300;
   border-radius: 12px;
   padding: 0.6rem 1rem;
@@ -93,7 +97,7 @@ h2 a {
 .sidebar-nav a,
 .sidebar-nav button {
   text-decoration: none;
-  color: $secondary-color;
+  color: var(--text);
   font-weight: 500;
   padding: 0.6rem 1rem;
   border-radius: 8px;
@@ -102,7 +106,7 @@ h2 a {
 
 .sidebar-nav a:hover,
 .sidebar-nav button:hover {
-  background: $line-color;
+  background: var(--gold2);
 }
 
 /* Sign out button */
@@ -124,24 +128,24 @@ h2 a {
 .topbar {
   background: none;
   padding: 1rem 2rem;
-  border-bottom: 1px solid $line-color;
+  border-bottom: 1px solid var(--sage);
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
 .page-view a {
-  background: $accent-color;
-  color: $text-color;
+  background: var(--coral);
+  color: var(--text);
   text-decoration: none;
-  padding: 0.5rem 2rem;
-  border-radius: 6px;
+  padding: 1rem 2rem;
+  border-radius: 25px;
   font-size: 0.9rem;
   transition: background 0.2s ease;
 }
 
 .page-view a:hover {
-  background: $link-hover-color;
+  background: var(--gold2);
 }
 
 /* ===== Content ===== */
@@ -152,28 +156,12 @@ h2 a {
 .content h1 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: $primary-color;
+  color: var(--text);
 }
 
 .content p {
   margin-bottom: 1rem;
-  color: $secondary-color;
+  color: var(--text);
 }
 
-.landing-page-editor {
-  background: #f9f9f9;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
 
-.landing-page-editor .landing-page {
-  padding: 2rem 1rem;
-  min-height: auto;
-  justify-content: flex-start;
-}
-
-body.dashboard {
-  overflow-x: hidden;
-  background: #fafafa;
-}
