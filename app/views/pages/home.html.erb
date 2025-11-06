@@ -1,23 +1,35 @@
-<div class="heading">
-
-  <h1>Aur<em>i</em></h1>
-  <h3>Your Digital Home, Built in Minutes.</h3>
+<body>
 
 
+  <div class="header">
+      <div class="logo">aur<em>i</em></div>
+  </div>
+  <div class="heading">
 
-  <div class="btn-container">
-    <div id="btn-join">
 
-      <%= link_to "Join Now", new_user_registration_path %>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Your Digital <br>Home, Built in <br>Minutes</h1>
+        <p>Auri helps you create beautiful landing pages with ease.</p>
+        <div class="btn-container">
+          <div id="btn-join">
 
-    </div>
+            <%= link_to "Get Started", new_user_registration_path %>
 
-    <div class="btn-log">
+          </div>
 
-      <%= link_to "Log In", new_user_session_path %>
+          <div class="btn-log">
 
-    </div>
+            <%= link_to "Log In", new_user_session_path %>
 
+          </div>
+
+        </div>
+
+      </div>
+      <div class="hero-visual"></div>
+    </section>
   </div>
 
-</div>
+</body>
+

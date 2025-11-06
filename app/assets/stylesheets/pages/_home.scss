@@ -1,35 +1,70 @@
 // Specific CSS for your home-page
 // _variables.scss (or at the top of your SCSS file)
-$primary-color: #1E1E1E;
-$secondary-color: #6B6B6B;
-$accent-color: #A78BFA;
-$text-color: #F7F7F8;
-$link-hover-color: #8B5CF6;
+$btn-hover: #9DB8A5;
+$accent-colour: #ff7f50;
+$text-colour: #333333;
+$background-colour: #fff8f0;
+$btn-colour: #ffe0a4;
+$btn-gradient: linear-gradient(317deg, #ff7f50, #ffe0a4);
+$btn-gradient-size: 400% 400%;
+$btn-animation: AnimationName 8s ease infinite;
 
-
-.heading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
-  background: linear-gradient(317deg, #F7F7F8, #FFFFFF);
-    background-size: 400% 400%;
-    -webkit-animation: AnimationName 8s ease infinite;
-    -moz-animation: AnimationName 8s ease infinite;
-    -o-animation: AnimationName 8s ease infinite;
-    animation: AnimationName 8s ease infinite
+:root {
+  --gold1: #FFC857;
+  --gold2: #FFE0A4;
+  --coral: #FF7F50;
+  --sage: #9DB8A5;
+  --bg: #FFF9EC;
+  --text: #2F3132;
 }
 
-.heading h1 {
-  font-size: 120px;
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
 }
 
-.heading h3 {
-  font-size: 35;
-  font-family: 'Maven Pro', sans-serif;
+.header .logo {
+  font-family: 'Playfair Display';
   font-weight: 400;
+  font-size: 35px;
+  padding-left: 1rem;
 }
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  font-weight: 100;
+  font-style: normal;
+  color: var(--text);
+  padding-top: -4rem;
+}
+
+.hero-text p {
+  margin-bottom: 3rem;
+  font-weight: 100;
+  padding-bottom: 2rem;
+}
+
+.hero-visual {
+  width: 700px;
+  height: 700px;
+  background: linear-gradient(to bottom right, var(--gold2), var(--coral));
+  border-radius: 16px;
+  /*box-shadow: 0 8px 24px rgba(0,0,0,0.05);*/
+}
+
 
 .btn-container {
   display: flex;
@@ -39,34 +74,39 @@ $link-hover-color: #8B5CF6;
 }
 
 #btn-join a {
-  display: inline-block;
-  background-color: #A78BFA; /* nice purple shade */
-  color: #F7F7F8;
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight: 600;
+  background: linear-gradient(to bottom right, var(--gold1), var(--gold2));
+  border: none;
+  border-radius: 25px;
+  color: var(--text);
   text-decoration: none;
-  padding: 14px 90px;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-  letter-spacing: 0.5px;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 17px 55px;
+  cursor: pointer;
+  transition: transform 0.9s ease;
 }
 
 #btn-join a:hover {
-  background-color: #8B5CF6; /* slightly darker on hover */
+  background: var(--gold2); /* slightly darker on hover */
 }
 
 .btn-log a {
-  display: inline-block;
-  background-color: #E5E5E5; /* nice purple shade */
-  color: #6B6B6B;
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight: 600;
+  background: none;
+  border: solid;
+  border-radius: 25px;
+  border-color: var(--text);
+  border-width: 1px;
+  color: var(--text);
   text-decoration: none;
-  padding: 14px 90px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-  letter-spacing: 0.5px;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 17px 55px;
+  cursor: pointer;
+  transition: transform 10s ease;
+}
+
+.btn-log a:hover {
+  border-color: var(--text);
+  border-width: 2px;
+  border: solid;
 }
