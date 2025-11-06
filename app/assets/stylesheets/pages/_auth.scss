@@ -1,18 +1,36 @@
-auth-container {
+:root {
+  --gold1: #FFC857;
+  --gold2: #FFE0A4;
+  --coral: #FF7F50;
+  --sage: #9DB8A5;
+  --bg: #FFF9EC;
+  --text: #2F3132;
+  --card: #FFFDF6;
+}
+
+.auth-container {
   max-width: 582px;
   margin: 4rem auto;
   padding: 2rem;
-  background-color: #ffffff;
+  background-color: var(--card);
   border-radius: 18px;
   border: 1px #E5E5E5;
   /*box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);*/
-  font-family: 'Inter', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+
+  .my-simple-form {
+    background: none;      /* remove any default card-like styles */
+    padding: 0;            /* remove extra spacing */
+    border: none;          /* remove borders if any */
+    box-shadow: none;
+  }
 
   h2 {
     text-align: center;
     margin-bottom: 1.5rem;
     font-weight: 700;
     font-size: 63px;
+    font-family: 'Cormorant Garamond', serif;
   }
 
   .form-group {
@@ -43,7 +61,7 @@ auth-container {
   }
 
   .form-actions {
-    margin-top: 1.5rem;
+    margin-top: .05rem;
     display: flex;
     justify-content: center;
 
