@@ -1,29 +1,49 @@
+:root {
+  --gold1: #FFC857;
+  --gold2: #FFE0A4;
+  --coral: #FF7F50;
+  --sage: #9DB8A5;
+  --bg: #FFF9EC;
+  --text: #2F3132;
+  --card: #FFFDF6;
+}
+
 .auth-container {
   max-width: 582px;
   margin: 4rem auto;
   padding: 2rem;
-  background-color: #ffffff;
+  background-color: var(--card);
   border-radius: 18px;
   border: 1px #E5E5E5;
-  /*box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);*/
-  font-family: 'Inter', sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  font-family: 'Open Sans', sans-serif;
+
+  .my-simple-form {
+    background: none;      /* remove any default card-like styles */
+    padding: 0;            /* remove extra spacing */
+    border: none;          /* remove borders if any */
+    box-shadow: none;
+  }
+
 
   h2 {
     text-align: center;
     margin-bottom: 1.5rem;
     font-weight: 700;
     font-size: 63px;
+    font-family: 'Cormorant Garamond', serif;
   }
 
   .form-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
+    background: none;
 
     label {
       margin-bottom: 0.5rem;
       font-size: 0.9rem;
-      font-weight: 500;
+      font-weight: 300;
     }
 
     .form-inputs {
@@ -33,7 +53,7 @@
       font-size: 1rem;
       font-family: inherit;
       transition: border-color 0.3s ease;
-      background-color: #F7F7F8;
+      background-color: var(--card);
 
       &:focus {
         border-color: #6a0dad;
@@ -43,26 +63,24 @@
   }
 
   .form-actions {
-    margin-top: 1.5rem;
+    margin-top: .1rem;
     display: flex;
     justify-content: center;
 
     .btn-primary {
-      max-width: 200px;
-      width: 100%;
-      display: inline-block;
-      background-color: #1E1E1E;
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+    background: linear-gradient(to bottom right, var(--gold1), var(--gold2));
+    border: none;
+    border-radius: 25px;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: transform 0.9s ease;
 
       &:hover {
-        background-color: #6B6B6B;
+        background: var(--gold2);
       }
     }
   }
