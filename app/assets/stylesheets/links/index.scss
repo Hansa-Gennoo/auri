@@ -1,9 +1,19 @@
+:root {
+  --gold1: #FFC857;
+  --gold2: #FFE0A4;
+  --coral: #FF7F50;
+  --sage: #9DB8A5;
+  --bg: #FFF9EC;
+  --text: #2F3132;
+  --card: #FFFDF6;
+}
+
 .links-title {
   font-size: 1.6rem;
   font-weight: 600;
   text-align: center;
   margin-bottom: 1.8rem;
-  color: #1E1E1E;
+  color: var(--text);
 }
 
 /* --- Container --- */
@@ -19,10 +29,10 @@
 
 /* --- Each Link Box --- */
 .link-item {
-  background-color: #ffffff;
+  background-color: var(--card);
   border-radius: 14px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05),
-              0 8px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05),
+              0 8px 8px rgba(0, 0, 0, 0.08);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,13 +42,13 @@
 
 .link-item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* --- Link Content --- */
 .link-display {
   text-decoration: none;
-  color: #1E1E1E;
+  color: var(--text);
   font-weight: 500;
   flex: 1;
   display: flex;
@@ -48,7 +58,7 @@
 
 .link-display i {
   font-size: 1.1rem;
-  color: #6B6B6B;
+  color: var(--text);
 }
 
 /* --- Actions (Edit & Delete) --- */
@@ -70,23 +80,23 @@
 }
 
 .edit-link {
-  color: #6a0dad;
+  color: var(--sage);
   background-color: rgba(106, 13, 173, 0.05);
 
   &:hover {
-    background-color: rgba(106, 13, 173, 0.15);
-    color: #580b9e;
+
+    color: var(--gold2);
     transform: scale(1.05);
   }
 }
 
 .delete-link {
-  color: #b33a3a;
+  color: var(--coral);
   background-color: rgba(179, 58, 58, 0.05);
 
   &:hover {
-    background-color: rgba(179, 58, 58, 0.15);
-    color: #ff4d4d;
+
+    color: var(--gold1);
     transform: scale(1.05);
   }
 }
@@ -101,17 +111,17 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #A78BFA;
-  color: #fff;
-  padding: 0.9rem 1.8rem;
-  border-radius: 12px;
-  font-weight: 600;
+  background-color: var(--gold1);
+  color: var(--text);
+  padding: 0.8rem 1.7rem;
+  border-radius: 25px;
+  font-weight: 400;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .btn-add-link:hover {
-  background-color: #8B5CF6;
+  background-color: var(--gold2);
 }
 
 /* --- Responsive Design --- */
