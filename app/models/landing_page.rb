@@ -1,6 +1,6 @@
 class LandingPage < ApplicationRecord
   belongs_to :user
-  has_one_attached :avatar 
+  has_one_attached :avatar
   belongs_to :theme, optional: true
   has_many :links, dependent: :destroy
   accepts_nested_attributes_for :links
@@ -14,6 +14,6 @@ class LandingPage < ApplicationRecord
   private
 
   def set_default_theme
-    self.theme ||= Theme.first # Pick first preset theme as default
+    self.theme ||= Theme.find_by(key: "default") # Pick first preset theme as default
   end
 end
