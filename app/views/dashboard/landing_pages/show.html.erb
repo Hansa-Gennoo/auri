@@ -21,7 +21,7 @@
 
     <div class="about">
       <!-- Avatar -->
-    <% if @landing_page.avatar.attached? %>
+      <% if @landing_page.avatar.attached? %>
         <%= image_tag @landing_page.avatar, class: "avatar-preview", data: { editor_target: "displayField" } %>
       <% else %>
         <div data-editor-target="displayField">
