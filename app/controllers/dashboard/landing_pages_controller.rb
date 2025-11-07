@@ -6,6 +6,7 @@ class Dashboard::LandingPagesController < Dashboard::BaseController
   def show
     @landing_page = LandingPage.find(params[:id])
     @links = @landing_page.links.order(:position)
+    @themes = Theme.all
   end
 
 

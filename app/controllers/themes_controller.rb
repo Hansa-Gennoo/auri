@@ -7,7 +7,11 @@ class ThemesController < ApplicationController
   end
 
   def show
-    @theme = Theme.find(params[:id])
+   @theme = Theme.find_by(key: params[:id]) || Theme.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.json { render json: @theme }
+    end
   end
 
   def new

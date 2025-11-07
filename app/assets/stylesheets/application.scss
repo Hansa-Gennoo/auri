@@ -17,3 +17,26 @@
 @import "links/index";
 @import "themes/index";
 @import "themes";
+
+:root {
+  --background-colour: #ffffff;
+  --primary-colour: #222222;
+  --accent-colour: #ff7f50;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--background-colour);
+  color: var(--primary-colour);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+}
+
+button, .btn {
+  background: var(--accent-colour);
+  color: var(--background-colour);
+}
