@@ -122,6 +122,7 @@ h2 a {
   display: flex;
   flex-direction: column;
   overflow: auto;
+  background: var(--bg);
 }
 
 /* ===== Topbar ===== */
@@ -130,7 +131,7 @@ h2 a {
   padding: 1rem 2rem;
   border-bottom: 1px solid var(--sage);
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -148,9 +149,31 @@ h2 a {
   background: var(--gold2);
 }
 
+.theme-switcher label {
+  color: var(--text);
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#theme-selector {
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease-in-out;
+  background: #fff;
+  color: var(--text);
+}
+
+#theme-selector:focus {
+  border-color: var(--sage); /* Your brand accent (purple-like) */
+  outline: none;
+}
+
 /* ===== Content ===== */
 .content {
   padding: 2rem;
+  background: var(--bg);
 }
 
 .content h1 {
@@ -164,4 +187,20 @@ h2 a {
   color: var(--text);
 }
 
+.landing-page-editor {
+  background: var(--bg);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
 
+.landing-page-editor .landing-page {
+  padding: 2rem 1rem;
+  min-height: auto;
+  justify-content: flex-start;
+}
+
+body.dashboard {
+  overflow-x: hidden;
+  background: var(--bg);
+}

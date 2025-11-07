@@ -44,6 +44,21 @@
 
       <div class="main-content">
         <header class="topbar">
+
+          <div class="theme-switcher" data-controller="theme">
+            <label for="theme-selector">Theme</label>
+            <select id="theme-selector"
+                    data-theme-target="selector"
+                    data-action="change->theme#change">
+              <% Theme.all.each do |theme| %>
+                <option value="<%= theme.key %>" <%= "selected" if current_user.landing_page&.theme&.key == theme.key %>>
+                  <%= theme.name %>
+                </option>
+              <% end %>
+            </select>
+          </div>
+
+
           <% if @landing_page %>
             <div class="page-view">
               <%= link_to public_landing_page_path(@landing_page.user.username), target: "_blank" do %>

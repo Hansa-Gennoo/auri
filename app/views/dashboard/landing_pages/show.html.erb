@@ -1,16 +1,5 @@
 <% theme = @landing_page.theme %>
 
-
-<style>
-  :root {
-    --background-colour: <%= theme.background_colour %>;
-    --primary-colour: <%= theme.primary_colour %>;
-    --accent-colour: <%= theme.accent_colour %>;
-    --font-heading: "<%= theme.font_heading %>", sans-serif;
-    --font-body: "<%= theme.font_body %>", sans-serif;
-  }
-</style>
-
 <%= form_with model: @landing_page,
               url: dashboard_landing_page_path(@landing_page),
               local: true,
