@@ -5,7 +5,9 @@ class LandingPage < ApplicationRecord
   has_many :links, dependent: :destroy
   accepts_nested_attributes_for :links
 
-  after_initialize :set_default_theme, if: :new_record?
+  #after_initialize :set_default_theme, if: :new_record?
+
+  before_validation :assign_default_theme, on: :create
 
   def theme_name
     theme.name
@@ -13,7 +15,7 @@ class LandingPage < ApplicationRecord
 
   private
 
-  def set_default_theme
+  def assign_default_theme
     self.theme ||= Theme.find_by(key: "default") # Pick first preset theme as default
   end
 end

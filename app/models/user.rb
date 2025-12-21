@@ -6,13 +6,7 @@ class User < ApplicationRecord
 
    has_one :landing_page, dependent: :destroy
 
-  after_create :create_default_landing_page
 
-  def create_default_landing_page
-    default_theme = Theme.first
-
-    create_landing_page(title: "My First Landing Page", theme: Theme.first)
-  end
 
  extend FriendlyId
   friendly_id :username, use: :slugged

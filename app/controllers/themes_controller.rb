@@ -7,6 +7,22 @@ class ThemesController < ApplicationController
     @themes = Theme.all
   end
 
+  def show
+    if request.format.json?
+      theme = Theme.find_by!(key: params[:id])
+      render json: {
+        background_colour: theme.background_colour,
+        primary_colour: theme.primary_colour,
+        accent_colour: theme.accent_colour,
+        font_heading: theme.font_heading,
+        font_body: theme.font_body
+      }
+    else
+      @theme = Theme.find(params[:id])
+    end
+   end
+
+
   # GET /themes/new
   def new
     @theme = Theme.new

@@ -56,6 +56,10 @@
                 </option>
               <% end %>
             </select>
+
+            <!-- Hidden input for form submission -->
+            <input type="hidden" name="landing_page[theme_id]" id="theme_id_field" value="<%= current_user.landing_page&.theme_id %>">
+
           </div>
 
 
