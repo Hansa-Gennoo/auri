@@ -5,6 +5,12 @@ class Dashboard::ThemesController < ApplicationController
       @themes = Theme.all
     end
 
+    def show
+      @theme = Theme.find_by!(key: params[:id])
+      render json: @theme
+    end
+
+
     def edit
       @theme = Theme.find(params[:id])
     end

@@ -1,11 +1,12 @@
-<% theme = @landing_page.theme %>
+<% theme = @landing_page.theme || Theme.find_by(key: "default") %>
 
 <%= form_with model: @landing_page,
               url: dashboard_landing_page_path(@landing_page),
               local: true,
               html: { multipart: true, data: { controller: "editor", editor_target: "form" } } do |f| %>
 
-  <div class="landing-page">
+  <div class="landing-page" data-controller="theme" data-theme-key="<%= @landing_page.theme&.key || 'default' %>">
+
 
 
     <div class="about">

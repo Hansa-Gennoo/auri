@@ -19,15 +19,19 @@ class Dashboard::LandingPagesController < Dashboard::BaseController
   def update
     @landing_page = current_user.landing_page
 
-    # Attach avatar manually if present
+   # Attach avatar manually if present
     if params[:landing_page][:avatar].present?
       @landing_page.avatar.attach(params[:landing_page][:avatar])
     end
 
-    if @landing_page.update(landing_page_params.except(:avatar))
-      redirect_to dashboard_landing_page_path(@landing_page), notice: "Landing page updated."
-    else
-      render :edit, status: :unprocessable_entity
+    respond_to do |format|
+      if @landing_page.update(landing_page_params.except(:avatar))
+        format.html { redirect_to dashboard_landing_page_path(@landing_page), notice: "Landing page updated." }
+        format.json { render json: { success: true, theme_id: @landing_page.theme_id }, status: :ok }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: { success: false, errors: @landing_page.errors.full_messages }, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -35,7 +39,8 @@ class Dashboard::LandingPagesController < Dashboard::BaseController
 
   # Ensures the current user always has a landing page with a valid theme
   def set_landing_page
-    @landing_page = current_user.landing_page
+    @landing_page = current_user.landing_page || current_user.create_landing_page!(theme: Theme.find_by(key: "default"))
+
     return if @landing_page.present?
 
 
